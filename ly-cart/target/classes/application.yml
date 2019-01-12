@@ -1,0 +1,20 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: cart-service
+  redis:
+    host: 192.168.164.128
+  rabbitmq:
+    virtual-host: /ly
+    username: root
+    password: 123456
+    host: 149.129.67.59
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+ly:
+  jwt:
+    pubKeyPath: C://tmp/rsa/id_rsa.pub # 公钥地址
+    cookieName: LY_TOKEN # cookie的名称

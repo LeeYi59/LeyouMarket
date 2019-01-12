@@ -1,0 +1,22 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.ly.upload.config.UploadProperties",
+      "name": "ly.upload",
+      "type": "com.ly.upload.config.UploadProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.ly.upload.config.UploadProperties",
+      "name": "ly.upload.allow-types",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "com.ly.upload.config.UploadProperties",
+      "name": "ly.upload.base-url",
+      "type": "java.lang.String"
+    }
+  ]
+}

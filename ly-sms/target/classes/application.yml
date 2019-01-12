@@ -1,0 +1,12 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: sms-service
+  rabbitmq:
+    virtual-host: /ly
+    username: root
+    password: 123456
+    host: 149.129.67.59
+  redis:
+    host: 192.168.164.128

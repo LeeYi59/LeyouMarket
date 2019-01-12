@@ -1,0 +1,28 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: item-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/market?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+  rabbitmq:
+    host: 149.129.67.59
+    username: root
+    password: 123456
+    virtual-host: /ly
+    template:
+      retry:
+        enabled: true
+        initial-interval: 10000ms
+        max-interval: 30000ms
+        multiplier: 2
+      exchange: ly.item.exchange
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

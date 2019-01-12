@@ -1,0 +1,27 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: upload-service
+  servlet:
+    multipart:
+      max-file-size: 10MB #限制上传文件的大小
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+fdfs:
+  so-timeout: 1501
+  connect-timeout: 601
+  thumb-image: # 缩略图
+    width: 60
+    height: 60
+  tracker-list: # tracker地址
+    - 192.168.164.128:22122
+ly:
+  upload:
+    baseUrl: http://image.lyshop.com/
+    allowTypes:
+      - image/jpeg
+      - image/png
+      - image/bmp

@@ -1,0 +1,40 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: order-manage
+  datasource:
+    url: jdbc:mysql://localhost:3306/market?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 192.168.164.128
+  rabbitmq:
+    host: 149.129.67.59
+    username: root
+    password: 123456
+    virtual-host: /ly
+    template:
+      retry:
+        enabled: true
+        initial-interval: 10000ms
+        max-interval: 30000ms
+        multiplier: 2
+      exchange: ly.item.exchange
+    publisher-confirms: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+mybatis:
+  type-aliases-package: com.ly.order.pojo
+ly:
+  jwt:
+    pubKeyPath: C://tmp/rsa/id_rsa.pub # 公钥地址
+    cookieName: LY_TOKEN # cookie的名称

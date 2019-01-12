@@ -1,0 +1,30 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: page-service
+  thymeleaf:
+    cache: false
+  rabbitmq:
+    host: 149.129.67.59
+    username: root
+    password: 123456
+    virtual-host: /ly
+    template:
+      retry:
+        enabled: true #重试开启
+        initial-interval: 10000ms #初始化重试周期
+        max-interval: 30000ms #最大重试周期
+        multiplier: 2 #重试次数
+      exchange: ly.item.exchange #默认交换机
+    publisher-confirms: true #生产者确认
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+#  instance:
+#    prefer-ip-address: true
+#    ip-address: 127.0.0.1
+ly:
+  page:
+    path: C:/My/upload
